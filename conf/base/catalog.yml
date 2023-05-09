@@ -1,0 +1,58 @@
+# Here you can define all your data sets by using simple YAML syntax.
+#
+# Documentation for this file format can be found in "The Data Catalog"
+# Link: https://docs.kedro.org/en/stable/data/data_catalog.html
+
+weather_AUS_raw:
+  type: pandas.CSVDataSet
+  filepath: C:\Work\Weather_Aus\weather-aus\data\01_raw\weatherAUS.csv
+  layer: raw
+  
+df1:
+  type: pandas.CSVDataSet
+  filepath: C:\Work\Weather_Aus\weather-aus\data\02_intermediate\df1.csv
+  layer: intermediate
+
+df1_treat_missing_value:
+  type: pandas.CSVDataSet
+  filepath: C:\Work\Weather_Aus\weather-aus\data\02_intermediate\df1_treat_missing_val.csv
+  layer: intermediate
+
+X_training:
+  type: pandas.CSVDataSet
+  filepath: C:\Work\Weather_Aus\weather-aus\data\02_intermediate\X_training.csv
+  layer: intermediate
+
+y_training:
+  type: pandas.CSVDataSet
+  filepath: C:\Work\Weather_Aus\weather-aus\data\02_intermediate\y_training.csv
+  layer: intermediate
+
+X_training0:
+  type: pandas.CSVDataSet
+  filepath: C:\Work\Weather_Aus\weather-aus\data\02_intermediate\X_training0.csv
+  layer: intermediate
+
+df1_scaled_data1:
+  type: pandas.CSVDataSet
+  filepath: C:\Work\Weather_Aus\weather-aus\data\02_intermediate\df1_scaled_data1.csv
+  layer: intermediate
+
+model:
+   type: pickle.PickleDataSet
+   filepath : C:\Work\Weather_Aus\weather-aus\data\06_models\model.pkl
+   layer: models
+
+# df2:
+#    type: pandas.CSVDataset
+#    filepath : C:\Work\Weather_Aus\weather-aus\data\08_reporting\df2.csv
+#    layer: reporting
+
+# X_inf:
+#    type: pandas.CSVDataset
+
+
+y_pred_inf:
+  type: pandas.CSVDataSet
+  filepath : C:\Work\Weather_Aus\weather-aus\data\02_intermediate\y_pred_inf.csv
+  layer: intermediate
