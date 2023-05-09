@@ -8,19 +8,19 @@ from sklearn.preprocessing import StandardScaler
 
 
 def extracting_inference_data(df):
-    """ Inference data extraction
+    """ Extracting inference data
     Arg: df
-    Return: df2 """
+    return: df_inf"""
     df = df.drop('Date',axis=1)
-    df2 = df[df["RainTomorrow"].isna()]
-    return df2
+    df_inf = df[df['RainTomorrow'].isna()]
+    return df_inf
 
-def splitting_inference_data(df2):
+def splitting_inference_data(df_inf):
     """ Splitting inference data
     Arg: df2
     Return: X_inf,y_inf """
-    X_inf = df2.drop(['RainTomorrow'],axis=1)
-    y_inf = df2['RainTomorrow']
+    X_inf = df_inf.drop(['RainTomorrow'],axis=1)
+    y_inf = df_inf['RainTomorrow']
     return X_inf,y_inf
 
 def inference_data_treat_missing_val(X_inf):
@@ -51,8 +51,8 @@ def inference_data_scaling(Xinf_treat_missing_value0):
     from sklearn.preprocessing import StandardScaler
     scaler = StandardScaler()
     inference_scaled_data = scaler.fit_transform(Xinf_treat_missing_value0)
-    #df1_inference_scaled_data = pd.DataFrame(inference_scaled_data)
-    return inference_scaled_data
+    df1_inference_scaled_data = pd.DataFrame(inference_scaled_data)
+    return df1_inference_scaled_data
 
 def logregAlgorithm1(inference_scaled_data:pd.DataFrame,model) -> pd.DataFrame:
     """Logistic regression algorithm used
@@ -72,5 +72,5 @@ def logregAlgorithm1(inference_scaled_data:pd.DataFrame,model) -> pd.DataFrame:
     # model = joblib.load(fullpath)
     
     y_pred_inf = model.predict(inference_scaled_data)
-    #df1_y_pred_inf = pd.DataFrame(y_pred_inf)
-    return y_pred_inf
+    df1_y_pred_inf = pd.DataFrame(y_pred_inf)
+    return df1_y_pred_inf

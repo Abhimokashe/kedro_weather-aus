@@ -5,54 +5,115 @@
 
 weather_AUS_raw:
   type: pandas.CSVDataSet
-  filepath: C:\Work\Weather_Aus\weather-aus\data\01_raw\weatherAUS.csv
+  filepath: data\01_raw\weatherAUS.csv
   layer: raw
   
 df1:
   type: pandas.CSVDataSet
-  filepath: C:\Work\Weather_Aus\weather-aus\data\02_intermediate\df1.csv
+  filepath: data\02_intermediate\df1.csv
   layer: intermediate
 
 df1_treat_missing_value:
   type: pandas.CSVDataSet
-  filepath: C:\Work\Weather_Aus\weather-aus\data\02_intermediate\df1_treat_missing_val.csv
+  filepath: data\02_intermediate\df1_treat_missing_val.csv
   layer: intermediate
 
 X_training:
   type: pandas.CSVDataSet
-  filepath: C:\Work\Weather_Aus\weather-aus\data\02_intermediate\X_training.csv
+  filepath: data\02_intermediate\X_training.csv
   layer: intermediate
 
 y_training:
   type: pandas.CSVDataSet
-  filepath: C:\Work\Weather_Aus\weather-aus\data\02_intermediate\y_training.csv
+  filepath: data\02_intermediate\y_training.csv
   layer: intermediate
 
 X_training0:
   type: pandas.CSVDataSet
-  filepath: C:\Work\Weather_Aus\weather-aus\data\02_intermediate\X_training0.csv
+  filepath: data\02_intermediate\X_training0.csv
   layer: intermediate
 
 df1_scaled_data1:
   type: pandas.CSVDataSet
-  filepath: C:\Work\Weather_Aus\weather-aus\data\02_intermediate\df1_scaled_data1.csv
+  filepath: data\02_intermediate\df1_scaled_data1.csv
   layer: intermediate
 
 model:
    type: pickle.PickleDataSet
-   filepath : C:\Work\Weather_Aus\weather-aus\data\06_models\model.pkl
+   filepath : data\06_models\model.pkl
    layer: models
 
-# df2:
-#    type: pandas.CSVDataset
-#    filepath : C:\Work\Weather_Aus\weather-aus\data\08_reporting\df2.csv
-#    layer: reporting
+X_train:
+  type: pandas.CSVDataSet
+  filepath: data\02_intermediate\X_train.csv
+  layer: intermediate
 
-# X_inf:
-#    type: pandas.CSVDataset
+X_test:
+  type: pandas.CSVDataSet
+  filepath: data\02_intermediate\X_test.csv
+  layer: intermediate
 
+y_train:
+  type: pandas.CSVDataSet
+  filepath: data\02_intermediate\y_train.csv
+  layer: intermediate
+
+y_test:
+  type: pandas.CSVDataSet
+  filepath: data\02_intermediate\y_test.csv
+  layer: intermediate
+
+y_pred_train:
+  type: pandas.CSVDataSet
+  filepath: data\07_model_output\y_pred_train.csv
+  layer: model_output
+
+y_pred_test:
+  type: pandas.CSVDataSet
+  filepath: data\07_model_output\y_pred_test.csv
+  layer: model_output
+
+accuracy_score_train:
+  type: pandas.CSVDataSet
+  filepath: data\07_model_output\accuracy_score_train.csv
+  layer: model_output
+
+accuracy_score_test:
+  type: pandas.CSVDataSet
+  filepath: data\07_model_output\accuracy_score_test.csv
+  layer: model_output
+
+df_inf:
+   type: pandas.CSVDataSet
+   filepath : data\08_reporting\df_inf.csv
+   layer: reporting
+
+X_inf:
+   type: pandas.CSVDataSet
+   filepath: data\08_reporting\X_inf.csv
+   layer: reporting
+
+y_inf:
+   type: pandas.CSVDataSet
+   filepath: data\08_reporting\y_inf.csv
+   layer: reporting
+
+Xinf_treat_missing_value0:
+   type: pandas.CSVDataSet
+   filepath: data\08_reporting\Xinf_treat_missing_value0.csv
+   layer: reporting
+
+Xinf_treat_missing_value0:
+   type: pandas.CSVDataSet
+   filepath: data\08_reporting\Xinf_treat_missing_value0.csv
+   layer: reporting
+
+inference_scaled_data:
+   type: pandas.CSVDataSet
+   filepath: data\08_reporting\inference_scaled_data.csv
+   layer: reporting
 
 y_pred_inf:
-  type: pandas.CSVDataSet
-  filepath : C:\Work\Weather_Aus\weather-aus\data\02_intermediate\y_pred_inf.csv
-  layer: intermediate
+   type: pandas.CSVDataSet
+   filepath: data\08_reporting\y_pred_inf.csv
+   layer: reporting

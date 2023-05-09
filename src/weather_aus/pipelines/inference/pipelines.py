@@ -8,12 +8,12 @@ def create_pipeline(**kwargs):
             node(
                  func = extracting_inference_data,
                  inputs="weather_AUS_raw",
-                 outputs="df2",
+                 outputs="df_inf",
                  name = "extracting_inference_data_node",
             ),
             node(
                  func = splitting_inference_data,
-                 inputs="df2",
+                 inputs="df_inf",
                  outputs=["X_inf","y_inf"],
                  name = "splitting_inference_data",
             ),

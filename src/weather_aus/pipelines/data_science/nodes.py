@@ -32,15 +32,19 @@ def logregAlgorithm(X_train,X_test,y_train,y_test):
 
 def prediction(X_train,X_test,y_train,y_test,model):
     y_pred_train = model.predict(X_train)
+    y_pred_train = pd.Series(y_pred_train)
     y_pred_test = model.predict(X_test)
+    y_pred_test = pd.Series(y_pred_test)
     return (y_pred_train,y_pred_test)
 
-def evaluation(y_pred_train,y_pred_test,y_train,y_test):
+def evaluation(y_pred_train:pd.Series,y_pred_test:pd.Series,y_train:pd.Series,y_test:pd.Series):
 
     """Model accuracy check
     Args: y_pred_train,y_pred_test
     Return: Accuracy_score"""
     
     accuracy_score_train = accuracy_score(y_train,y_pred_train)
+    accuracy_score_train = pd.Series(accuracy_score_train)
     accuracy_score_test = accuracy_score(y_test,y_pred_test)
+    accuracy_score_test = pd.Series(accuracy_score_test)
     return (accuracy_score_train,accuracy_score_test)
