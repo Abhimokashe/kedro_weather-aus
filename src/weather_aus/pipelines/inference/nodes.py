@@ -74,3 +74,19 @@ def logregAlgorithm1(inference_scaled_data:pd.DataFrame,model) -> pd.DataFrame:
     y_pred_inf = model.predict(inference_scaled_data)
     df1_y_pred_inf = pd.DataFrame(y_pred_inf)
     return df1_y_pred_inf
+
+def concat_inf(X_inf,df1_y_pred_inf):
+    """ Concating independent variable inference to predicted dependent variable inference
+    Args: X_inf,df1_y_pred_inf
+    Return: df_inference"""
+
+    df_inference = pd.concat([X_inf,df1_y_pred_inf],axis=1)
+    return df_inference
+
+def concat_original(df1,df_inference):
+    """ Concating df_inference to df1
+    Args : df1,df_inference
+    Return: df_req"""
+
+    df_req = pd.concat([df1,df_inference],axis=0)
+    return df_req

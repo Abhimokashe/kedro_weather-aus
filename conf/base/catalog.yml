@@ -117,3 +117,13 @@ y_pred_inf:
    type: pandas.CSVDataSet
    filepath: data\08_reporting\y_pred_inf.csv
    layer: reporting
+
+df_inference:
+   type: pandas.CSVDataSet
+   filepath: data\08_reporting\df_inference.csv
+   layer: reporting
+
+df_req:
+   type: pandas.CSVDataSet
+   filepath: data\08_reporting\df_req.csv
+   layer: reporting
