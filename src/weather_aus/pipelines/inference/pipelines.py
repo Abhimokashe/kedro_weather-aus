@@ -1,6 +1,6 @@
 from kedro.pipeline import Pipeline, node
 
-from .nodes import extracting_inference_data,splitting_inference_data,inference_data_treat_missing_val,inference_data_label_encoding,inference_data_scaling,logregAlgorithm1
+from .nodes import extracting_inference_data,splitting_inference_data,inference_data_treat_missing_val,inference_data_label_encoding,inference_data_scaling,logregAlgorithm1,concat_inf,concat_original
 
 def create_pipeline(**kwargs):
     return Pipeline(
@@ -40,6 +40,18 @@ def create_pipeline(**kwargs):
                   inputs = ["inference_scaled_data","model"],
                   outputs = "df1_y_pred_inf",
                   name = "logregAlgorithm1_node",
+            ),
+            node(
+                  func = concat_inf,
+                  inputs = ["X_inf","df1_y_pred_inf"],
+                  outputs = "df_inference",
+                  name = "concat_inf_node",
+            ),
+            node(
+                  func = concat_original,
+                  inputs = ["df1","df_inference"],
+                  outputs = "df_req",
+                  name = "concat_original_node",
             )
             
         
